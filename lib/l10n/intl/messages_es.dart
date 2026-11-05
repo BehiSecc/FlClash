@@ -1125,9 +1125,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "installCertificateSuccess": MessageLookupByLibrary.simpleMessage(
       "Certificado instalado",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "Se denegó el permiso de lista de apps, por lo que no se pueden mostrar las apps instaladas. Concédelo manualmente en los ajustes del sistema.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "Se denegó el permiso de lista de apps, por lo que no se pueden mostrar las apps instaladas. Concédelo manualmente en los ajustes del sistema.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "Este sistema oculta la lista de apps instaladas hasta que se concede el permiso. Autorízalo para configurar el proxy por app.",
     ),
@@ -2161,6 +2162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startupAndBackground": MessageLookupByLibrary.simpleMessage(
       "Inicio y segundo plano",
     ),
+    "statistics": MessageLookupByLibrary.simpleMessage("Estadísticas"),
     "status": MessageLookupByLibrary.simpleMessage("Estado"),
     "statusDesc": MessageLookupByLibrary.simpleMessage(
       "Con DNS desactivado, se usa el DNS del sistema.",
@@ -2297,6 +2299,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "url": MessageLookupByLibrary.simpleMessage("URL"),
     "urlRewrite": MessageLookupByLibrary.simpleMessage("Reescritura de URL"),
     "urlTip": m98,
+    "usageAllTime": MessageLookupByLibrary.simpleMessage("Todo"),
+    "usageApps": MessageLookupByLibrary.simpleMessage("Apps"),
+    "usageDomains": MessageLookupByLibrary.simpleMessage("Dominios"),
+    "usageFindProcessNotice": MessageLookupByLibrary.simpleMessage(
+      "Buscar proceso está desactivado, así que el tráfico registrado mientras tanto aparece como Desconocido.",
+    ),
+    "usageLast30Days": MessageLookupByLibrary.simpleMessage("30 días"),
+    "usageLast7Days": MessageLookupByLibrary.simpleMessage("7 días"),
+    "usageResetTip": MessageLookupByLibrary.simpleMessage(
+      "¿Borrar todo el uso registrado? Esta acción no se puede deshacer.",
+    ),
+    "usageToday": MessageLookupByLibrary.simpleMessage("Hoy"),
     "useHosts": MessageLookupByLibrary.simpleMessage("Usar hosts"),
     "useSystemHosts": MessageLookupByLibrary.simpleMessage(
       "Usar hosts del sistema",

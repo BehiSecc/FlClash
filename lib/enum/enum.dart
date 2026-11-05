@@ -529,6 +529,7 @@ enum PageLabel {
   tools,
   logs,
   requests,
+  statistics,
   resources,
   dns,
 }

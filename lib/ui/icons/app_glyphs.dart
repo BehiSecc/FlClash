@@ -1557,6 +1557,12 @@ abstract final class AppGlyphs {
     ),
   ]);
 
+  static const barChart = Glyph([
+    GlyphBox(4, 12.5, 8.5, 20.5, 1.6),
+    GlyphBox(9.75, 3.5, 14.25, 20.5, 1.6),
+    GlyphBox(15.5, 8, 20, 20.5, 1.6),
+  ]);
+
   static const memory = Glyph([
     GlyphBox(3.5, 7.2, 20.5, 16.8, 2.5),
     GlyphPolyline([

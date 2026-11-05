@@ -1712,6 +1712,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startFromScratch": MessageLookupByLibrary.simpleMessage("最初から作成"),
     "startVpn": MessageLookupByLibrary.simpleMessage("VPNを起動しています…"),
     "startupAndBackground": MessageLookupByLibrary.simpleMessage("起動とバックグラウンド"),
+    "statistics": MessageLookupByLibrary.simpleMessage("統計"),
     "status": MessageLookupByLibrary.simpleMessage("状態"),
     "statusDesc": MessageLookupByLibrary.simpleMessage(
       "DNS を無効にすると、システム DNS を使用します。",
@@ -1826,6 +1827,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "url": MessageLookupByLibrary.simpleMessage("URL"),
     "urlRewrite": MessageLookupByLibrary.simpleMessage("URL 書き換え"),
     "urlTip": m98,
+    "usageAllTime": MessageLookupByLibrary.simpleMessage("すべて"),
+    "usageApps": MessageLookupByLibrary.simpleMessage("アプリ"),
+    "usageDomains": MessageLookupByLibrary.simpleMessage("ドメイン"),
+    "usageFindProcessNotice": MessageLookupByLibrary.simpleMessage(
+      "プロセス検出がオフの間に記録された通信は「不明」として表示されます。",
+    ),
+    "usageLast30Days": MessageLookupByLibrary.simpleMessage("30日間"),
+    "usageLast7Days": MessageLookupByLibrary.simpleMessage("7日間"),
+    "usageResetTip": MessageLookupByLibrary.simpleMessage(
+      "記録された使用量をすべて消去しますか？この操作は元に戻せません。",
+    ),
+    "usageToday": MessageLookupByLibrary.simpleMessage("今日"),
     "useHosts": MessageLookupByLibrary.simpleMessage("Hostsを使用"),
     "useSystemHosts": MessageLookupByLibrary.simpleMessage("システムのHostsを使用"),
     "usedShort": MessageLookupByLibrary.simpleMessage("使用済み"),

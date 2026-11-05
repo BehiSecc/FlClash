@@ -1682,6 +1682,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startFromScratch": MessageLookupByLibrary.simpleMessage("처음부터 시작"),
     "startVpn": MessageLookupByLibrary.simpleMessage("VPN 시작 중…"),
     "startupAndBackground": MessageLookupByLibrary.simpleMessage("시작 및 백그라운드"),
+    "statistics": MessageLookupByLibrary.simpleMessage("통계"),
     "status": MessageLookupByLibrary.simpleMessage("상태"),
     "statusDesc": MessageLookupByLibrary.simpleMessage(
       "DNS를 끄면 시스템 DNS를 사용합니다.",
@@ -1798,6 +1799,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "url": MessageLookupByLibrary.simpleMessage("URL"),
     "urlRewrite": MessageLookupByLibrary.simpleMessage("URL 재작성"),
     "urlTip": m98,
+    "usageAllTime": MessageLookupByLibrary.simpleMessage("전체"),
+    "usageApps": MessageLookupByLibrary.simpleMessage("앱"),
+    "usageDomains": MessageLookupByLibrary.simpleMessage("도메인"),
+    "usageFindProcessNotice": MessageLookupByLibrary.simpleMessage(
+      "프로세스 찾기가 꺼져 있는 동안 기록된 트래픽은 \'알 수 없음\'으로 표시됩니다.",
+    ),
+    "usageLast30Days": MessageLookupByLibrary.simpleMessage("30일"),
+    "usageLast7Days": MessageLookupByLibrary.simpleMessage("7일"),
+    "usageResetTip": MessageLookupByLibrary.simpleMessage(
+      "기록된 사용량을 모두 삭제할까요? 되돌릴 수 없습니다.",
+    ),
+    "usageToday": MessageLookupByLibrary.simpleMessage("오늘"),
     "useHosts": MessageLookupByLibrary.simpleMessage("hosts 사용"),
     "useSystemHosts": MessageLookupByLibrary.simpleMessage("시스템 hosts 사용"),
     "usedShort": MessageLookupByLibrary.simpleMessage("사용"),

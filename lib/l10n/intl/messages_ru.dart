@@ -1096,9 +1096,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "installCertificateSuccess": MessageLookupByLibrary.simpleMessage(
       "Сертификат установлен",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "Разрешение на список приложений отклонено, поэтому установленные приложения недоступны. Предоставьте его вручную в системных настройках.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "Разрешение на список приложений отклонено, поэтому установленные приложения недоступны. Предоставьте его вручную в системных настройках.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "Эта система не выдаёт список установленных приложений без разрешения. Предоставьте его, чтобы настроить прокси для отдельных приложений.",
     ),
@@ -2098,6 +2099,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startupAndBackground": MessageLookupByLibrary.simpleMessage(
       "Запуск и фоновая работа",
     ),
+    "statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
     "status": MessageLookupByLibrary.simpleMessage("Статус"),
     "statusDesc": MessageLookupByLibrary.simpleMessage(
       "При отключённом DNS используется системный DNS.",
@@ -2236,6 +2238,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "url": MessageLookupByLibrary.simpleMessage("URL"),
     "urlRewrite": MessageLookupByLibrary.simpleMessage("Перезапись URL"),
     "urlTip": m98,
+    "usageAllTime": MessageLookupByLibrary.simpleMessage("Всё время"),
+    "usageApps": MessageLookupByLibrary.simpleMessage("Приложения"),
+    "usageDomains": MessageLookupByLibrary.simpleMessage("Домены"),
+    "usageFindProcessNotice": MessageLookupByLibrary.simpleMessage(
+      "Поиск процесса отключён, поэтому трафик, записанный в это время, отображается как «Неизвестно».",
+    ),
+    "usageLast30Days": MessageLookupByLibrary.simpleMessage("30 дней"),
+    "usageLast7Days": MessageLookupByLibrary.simpleMessage("7 дней"),
+    "usageResetTip": MessageLookupByLibrary.simpleMessage(
+      "Удалить всю записанную статистику? Это действие нельзя отменить.",
+    ),
+    "usageToday": MessageLookupByLibrary.simpleMessage("Сегодня"),
     "useHosts": MessageLookupByLibrary.simpleMessage("Использовать hosts"),
     "useSystemHosts": MessageLookupByLibrary.simpleMessage(
       "Использовать системный hosts",

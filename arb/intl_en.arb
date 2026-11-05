@@ -1076,5 +1076,14 @@
   "fakeipFilterDesc": "These domains get real IPs instead of Fake-IPs. In whitelist mode, only they get Fake-IPs.",
   "fallbackFilterGeositeDesc": "Domains in these GeoSite categories are resolved by Fallback directly.",
   "fallbackFilterIpcidrDesc": "When Nameserver returns an IP in these ranges, the Fallback answer is used.",
-  "fallbackFilterDomainDesc": "These domains are resolved by Fallback directly."
+  "fallbackFilterDomainDesc": "These domains are resolved by Fallback directly.",
+  "statistics": "Statistics",
+  "usageToday": "Today",
+  "usageLast7Days": "7 days",
+  "usageLast30Days": "30 days",
+  "usageAllTime": "All",
+  "usageApps": "Apps",
+  "usageDomains": "Domains",
+  "usageFindProcessNotice": "Find process is off, so traffic recorded while it is off appears as Unknown.",
+  "usageResetTip": "Clear all recorded usage? This cannot be undone."
 }

@@ -1127,9 +1127,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "installCertificateSuccess": MessageLookupByLibrary.simpleMessage(
       "Certificat installé",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "L’autorisation de la liste des apps a été refusée ; les apps installées ne peuvent donc pas être listées. Veuillez l’accorder manuellement dans les réglages du système.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "L’autorisation de la liste des apps a été refusée ; les apps installées ne peuvent donc pas être listées. Veuillez l’accorder manuellement dans les réglages du système.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "Ce système masque la liste des apps installées tant que l’autorisation n’est pas accordée. Accordez-la pour configurer le proxy par app.",
     ),
@@ -2161,6 +2162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startupAndBackground": MessageLookupByLibrary.simpleMessage(
       "Démarrage et arrière-plan",
     ),
+    "statistics": MessageLookupByLibrary.simpleMessage("Statistiques"),
     "status": MessageLookupByLibrary.simpleMessage("État"),
     "statusDesc": MessageLookupByLibrary.simpleMessage(
       "Si DNS est désactivé, le DNS du système est utilisé.",
@@ -2301,6 +2303,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "url": MessageLookupByLibrary.simpleMessage("URL"),
     "urlRewrite": MessageLookupByLibrary.simpleMessage("Réécriture d’URL"),
     "urlTip": m98,
+    "usageAllTime": MessageLookupByLibrary.simpleMessage("Tout"),
+    "usageApps": MessageLookupByLibrary.simpleMessage("Apps"),
+    "usageDomains": MessageLookupByLibrary.simpleMessage("Domaines"),
+    "usageFindProcessNotice": MessageLookupByLibrary.simpleMessage(
+      "La recherche de processus est désactivée : le trafic enregistré pendant ce temps apparaît comme Inconnu.",
+    ),
+    "usageLast30Days": MessageLookupByLibrary.simpleMessage("30 jours"),
+    "usageLast7Days": MessageLookupByLibrary.simpleMessage("7 jours"),
+    "usageResetTip": MessageLookupByLibrary.simpleMessage(
+      "Effacer toute la consommation enregistrée ? Cette action est irréversible.",
+    ),
+    "usageToday": MessageLookupByLibrary.simpleMessage("Aujourd’hui"),
     "useHosts": MessageLookupByLibrary.simpleMessage("Utiliser hosts"),
     "useSystemHosts": MessageLookupByLibrary.simpleMessage(
       "Utiliser les hosts du système",

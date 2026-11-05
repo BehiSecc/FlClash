@@ -1048,9 +1048,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "installCertificateSuccess": MessageLookupByLibrary.simpleMessage(
       "Certificate installed",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "The app list permission was denied, so installed apps cannot be listed. Please grant it manually in system settings.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "The app list permission was denied, so installed apps cannot be listed. Please grant it manually in system settings.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "This system hides the installed app list until the permission is granted. Authorize it to configure the per-app proxy.",
     ),
@@ -1998,6 +1999,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startupAndBackground": MessageLookupByLibrary.simpleMessage(
       "Startup and background",
     ),
+    "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "status": MessageLookupByLibrary.simpleMessage("Status"),
     "statusDesc": MessageLookupByLibrary.simpleMessage(
       "With DNS off, the system DNS is used.",
@@ -2126,6 +2128,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "url": MessageLookupByLibrary.simpleMessage("URL"),
     "urlRewrite": MessageLookupByLibrary.simpleMessage("URL rewrite"),
     "urlTip": m98,
+    "usageAllTime": MessageLookupByLibrary.simpleMessage("All"),
+    "usageApps": MessageLookupByLibrary.simpleMessage("Apps"),
+    "usageDomains": MessageLookupByLibrary.simpleMessage("Domains"),
+    "usageFindProcessNotice": MessageLookupByLibrary.simpleMessage(
+      "Find process is off, so traffic recorded while it is off appears as Unknown.",
+    ),
+    "usageLast30Days": MessageLookupByLibrary.simpleMessage("30 days"),
+    "usageLast7Days": MessageLookupByLibrary.simpleMessage("7 days"),
+    "usageResetTip": MessageLookupByLibrary.simpleMessage(
+      "Clear all recorded usage? This cannot be undone.",
+    ),
+    "usageToday": MessageLookupByLibrary.simpleMessage("Today"),
     "useHosts": MessageLookupByLibrary.simpleMessage("Use hosts"),
     "useSystemHosts": MessageLookupByLibrary.simpleMessage("Use system hosts"),
     "usedShort": MessageLookupByLibrary.simpleMessage("used"),

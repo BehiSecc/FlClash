@@ -1076,5 +1076,14 @@
   "fakeipFilterDesc": "Эти домены получают реальные IP вместо Fake-IP. В режиме whitelist Fake-IP получают только они.",
   "fallbackFilterGeositeDesc": "Домены из этих категорий GeoSite сразу разрешаются через Fallback.",
   "fallbackFilterIpcidrDesc": "Если Nameserver возвращает IP из этих диапазонов, используется ответ Fallback.",
-  "fallbackFilterDomainDesc": "Эти домены сразу разрешаются через Fallback."
+  "fallbackFilterDomainDesc": "Эти домены сразу разрешаются через Fallback.",
+  "statistics": "Статистика",
+  "usageToday": "Сегодня",
+  "usageLast7Days": "7 дней",
+  "usageLast30Days": "30 дней",
+  "usageAllTime": "Всё время",
+  "usageApps": "Приложения",
+  "usageDomains": "Домены",
+  "usageFindProcessNotice": "Поиск процесса отключён, поэтому трафик, записанный в это время, отображается как «Неизвестно».",
+  "usageResetTip": "Удалить всю записанную статистику? Это действие нельзя отменить."
 }

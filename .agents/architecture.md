@@ -1432,6 +1432,9 @@ Tables:
 - `IconSets` (`icon_sets`)
 - `ClashProviders` (`clash_providers`)
 - `IpQualities` (`ip_qualities`): a cache of IP quality lookups that backups carry and a restore never reads.
+- `UsageStats` (`usage_stats`): bytes per local day, app and domain for the Statistics page, written in batches by
+  `UsageRecorder` from the Core's request events (inner connections excluded, since the connection that caused them
+  already counts) and pruned past 365 days. Backups carry it through the database snapshot and a restore never reads it.
 - `MitmModules` (`mitm_modules`): the Surge modules and Loon plugins of HTTPS decryption, with their argument values;
   their content and the files they download live under `mitm/` (HTTPS Decryption).
 

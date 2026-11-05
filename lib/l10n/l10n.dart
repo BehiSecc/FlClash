@@ -7663,8 +7663,7 @@ class AppLocalizations {
   String customImportDroppedSubRules(num count, Object label) {
     return Intl.plural(
       count,
-      one:
-          '1 SUB-RULE rule was dropped, since custom profiles do not support sub-rules',
+      one: '1 SUB-RULE rule was dropped, since custom profiles do not support sub-rules',
       other:
           '$label SUB-RULE rules were dropped, since custom profiles do not support sub-rules',
       name: 'customImportDroppedSubRules',
@@ -9068,6 +9067,61 @@ class AppLocalizations {
     return Intl.message(
       'These domains are resolved by Fallback directly.',
       name: 'fallbackFilterDomainDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistics`
+  String get statistics {
+    return Intl.message('Statistics', name: 'statistics', desc: '', args: []);
+  }
+
+  /// `Today`
+  String get usageToday {
+    return Intl.message('Today', name: 'usageToday', desc: '', args: []);
+  }
+
+  /// `7 days`
+  String get usageLast7Days {
+    return Intl.message('7 days', name: 'usageLast7Days', desc: '', args: []);
+  }
+
+  /// `30 days`
+  String get usageLast30Days {
+    return Intl.message('30 days', name: 'usageLast30Days', desc: '', args: []);
+  }
+
+  /// `All`
+  String get usageAllTime {
+    return Intl.message('All', name: 'usageAllTime', desc: '', args: []);
+  }
+
+  /// `Apps`
+  String get usageApps {
+    return Intl.message('Apps', name: 'usageApps', desc: '', args: []);
+  }
+
+  /// `Domains`
+  String get usageDomains {
+    return Intl.message('Domains', name: 'usageDomains', desc: '', args: []);
+  }
+
+  /// `Find process is off, so traffic recorded while it is off appears as Unknown.`
+  String get usageFindProcessNotice {
+    return Intl.message(
+      'Find process is off, so traffic recorded while it is off appears as Unknown.',
+      name: 'usageFindProcessNotice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear all recorded usage? This cannot be undone.`
+  String get usageResetTip {
+    return Intl.message(
+      'Clear all recorded usage? This cannot be undone.',
+      name: 'usageResetTip',
       desc: '',
       args: [],
     );

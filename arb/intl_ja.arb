@@ -1076,5 +1076,14 @@
   "fakeipFilterDesc": "これらのドメインには Fake-IP ではなく実際の IP を返します。whitelist モードでは、これらだけが Fake-IP を使います。",
   "fallbackFilterGeositeDesc": "これらの GeoSite カテゴリのドメインは、直接 Fallback で解決します。",
   "fallbackFilterIpcidrDesc": "Nameserver がこれらの範囲の IP を返したときは、Fallback の結果を使います。",
-  "fallbackFilterDomainDesc": "これらのドメインは、直接 Fallback で解決します。"
+  "fallbackFilterDomainDesc": "これらのドメインは、直接 Fallback で解決します。",
+  "statistics": "統計",
+  "usageToday": "今日",
+  "usageLast7Days": "7日間",
+  "usageLast30Days": "30日間",
+  "usageAllTime": "すべて",
+  "usageApps": "アプリ",
+  "usageDomains": "ドメイン",
+  "usageFindProcessNotice": "プロセス検出がオフの間に記録された通信は「不明」として表示されます。",
+  "usageResetTip": "記録された使用量をすべて消去しますか？この操作は元に戻せません。"
 }

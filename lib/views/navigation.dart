@@ -38,6 +38,12 @@ class Navigation implements NavigationPort {
         modes: [NavigationItemMode.desktop, NavigationItemMode.moreFull],
       ),
       NavigationItem(
+        glyph: AppGlyphs.barChart,
+        label: PageLabel.statistics,
+        builder: (_) => const StatisticsView(),
+        modes: [NavigationItemMode.desktop, NavigationItemMode.moreFull],
+      ),
+      NavigationItem(
         glyph: AppGlyphs.dns,
         label: PageLabel.dns,
         builder: (_) => const DnsQueriesView(),

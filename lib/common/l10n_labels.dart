@@ -14,8 +14,31 @@ extension PageLabelL10n on PageLabel {
       PageLabel.tools => appLocalizations.tools,
       PageLabel.logs => appLocalizations.logs,
       PageLabel.requests => appLocalizations.requests,
+      PageLabel.statistics => appLocalizations.statistics,
       PageLabel.resources => appLocalizations.resources,
       PageLabel.dns => appLocalizations.dnsQueries,
+    };
+  }
+}
+
+extension UsageRangeL10n on UsageRange {
+  String get label {
+    final appLocalizations = currentAppLocalizations;
+    return switch (this) {
+      UsageRange.today => appLocalizations.usageToday,
+      UsageRange.week => appLocalizations.usageLast7Days,
+      UsageRange.month => appLocalizations.usageLast30Days,
+      UsageRange.all => appLocalizations.usageAllTime,
+    };
+  }
+}
+
+extension UsageTabL10n on UsageTab {
+  String get label {
+    final appLocalizations = currentAppLocalizations;
+    return switch (this) {
+      UsageTab.apps => appLocalizations.usageApps,
+      UsageTab.domains => appLocalizations.usageDomains,
     };
   }
 }

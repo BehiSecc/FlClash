@@ -2,6 +2,7 @@ export 'about.dart';
 export 'access.dart';
 export 'backup_and_restore.dart';
 export 'connection/requests.dart';
+export 'connection/statistics.dart';
 export 'dashboard/dashboard.dart';
 export 'developer.dart';
 export 'disclaimer.dart';

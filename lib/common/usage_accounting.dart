@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:fl_clash/common/usage_attribution.dart';
 import 'package:fl_clash/models/models.dart';
 
@@ -36,7 +34,7 @@ class UsageAccounting {
 
   final DateTime Function() _now;
   final int capacity;
-  final _connections = LinkedHashMap<String, _Connection>();
+  final _connections = <String, _Connection>{};
   final _pending = <UsageKey, UsageDelta>{};
 
   bool get hasPending => _pending.isNotEmpty;
