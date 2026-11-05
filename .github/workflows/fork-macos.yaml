@@ -80,10 +80,10 @@ jobs:
 
       - name: Smoke launch
         run: |
-          app="$(find build/macos -type d -name FlClash.app -print -quit)"
+          app="$(find build/macos -type d -name MyClash.app -print -quit)"
           test -n "$app"
           codesign --verify --deep "$app" || codesign --display --verbose=2 "$app"
-          "$app/Contents/MacOS/FlClash" > launch.log 2>&1 &
+          "$app/Contents/MacOS/MyClash" > launch.log 2>&1 &
           pid=$!
           sleep 25
           if ! kill -0 "$pid" 2>/dev/null; then
@@ -112,4 +112,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           TAG: ${{ github.ref_name }}
-        run: gh release create "$TAG" dist/*.dmg --prerelease --title "$TAG" --notes "FlClash with per-app and per-domain usage statistics."
+        run: gh release create "$TAG" dist/*.dmg --prerelease --title "$TAG" --notes "MyClash: FlClash with per-app and per-domain usage statistics. Installs alongside official FlClash."
