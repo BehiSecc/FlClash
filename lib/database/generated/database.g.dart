@@ -5241,6 +5241,359 @@ class MitmModulesCompanion extends UpdateCompanion<RawMitmModule> {
   }
 }
 
+class $UsageStatsTable extends UsageStats
+    with TableInfo<$UsageStatsTable, UsageStatRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $UsageStatsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _dayMeta = const VerificationMeta('day');
+  @override
+  late final GeneratedColumn<String> day = GeneratedColumn<String>(
+    'day',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _appMeta = const VerificationMeta('app');
+  @override
+  late final GeneratedColumn<String> app = GeneratedColumn<String>(
+    'app',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _domainMeta = const VerificationMeta('domain');
+  @override
+  late final GeneratedColumn<String> domain = GeneratedColumn<String>(
+    'domain',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _uploadMeta = const VerificationMeta('upload');
+  @override
+  late final GeneratedColumn<int> upload = GeneratedColumn<int>(
+    'upload',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _downloadMeta = const VerificationMeta(
+    'download',
+  );
+  @override
+  late final GeneratedColumn<int> download = GeneratedColumn<int>(
+    'download',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [day, app, domain, upload, download];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'usage_stats';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<UsageStatRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('day')) {
+      context.handle(
+        _dayMeta,
+        day.isAcceptableOrUnknown(data['day']!, _dayMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_dayMeta);
+    }
+    if (data.containsKey('app')) {
+      context.handle(
+        _appMeta,
+        app.isAcceptableOrUnknown(data['app']!, _appMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_appMeta);
+    }
+    if (data.containsKey('domain')) {
+      context.handle(
+        _domainMeta,
+        domain.isAcceptableOrUnknown(data['domain']!, _domainMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_domainMeta);
+    }
+    if (data.containsKey('upload')) {
+      context.handle(
+        _uploadMeta,
+        upload.isAcceptableOrUnknown(data['upload']!, _uploadMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_uploadMeta);
+    }
+    if (data.containsKey('download')) {
+      context.handle(
+        _downloadMeta,
+        download.isAcceptableOrUnknown(data['download']!, _downloadMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_downloadMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {day, app, domain};
+  @override
+  UsageStatRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return UsageStatRow(
+      day: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}day'],
+      )!,
+      app: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}app'],
+      )!,
+      domain: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}domain'],
+      )!,
+      upload: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}upload'],
+      )!,
+      download: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}download'],
+      )!,
+    );
+  }
+
+  @override
+  $UsageStatsTable createAlias(String alias) {
+    return $UsageStatsTable(attachedDatabase, alias);
+  }
+}
+
+class UsageStatRow extends DataClass implements Insertable<UsageStatRow> {
+  final String day;
+  final String app;
+  final String domain;
+  final int upload;
+  final int download;
+  const UsageStatRow({
+    required this.day,
+    required this.app,
+    required this.domain,
+    required this.upload,
+    required this.download,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['day'] = Variable<String>(day);
+    map['app'] = Variable<String>(app);
+    map['domain'] = Variable<String>(domain);
+    map['upload'] = Variable<int>(upload);
+    map['download'] = Variable<int>(download);
+    return map;
+  }
+
+  UsageStatsCompanion toCompanion(bool nullToAbsent) {
+    return UsageStatsCompanion(
+      day: Value(day),
+      app: Value(app),
+      domain: Value(domain),
+      upload: Value(upload),
+      download: Value(download),
+    );
+  }
+
+  factory UsageStatRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return UsageStatRow(
+      day: serializer.fromJson<String>(json['day']),
+      app: serializer.fromJson<String>(json['app']),
+      domain: serializer.fromJson<String>(json['domain']),
+      upload: serializer.fromJson<int>(json['upload']),
+      download: serializer.fromJson<int>(json['download']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'day': serializer.toJson<String>(day),
+      'app': serializer.toJson<String>(app),
+      'domain': serializer.toJson<String>(domain),
+      'upload': serializer.toJson<int>(upload),
+      'download': serializer.toJson<int>(download),
+    };
+  }
+
+  UsageStatRow copyWith({
+    String? day,
+    String? app,
+    String? domain,
+    int? upload,
+    int? download,
+  }) => UsageStatRow(
+    day: day ?? this.day,
+    app: app ?? this.app,
+    domain: domain ?? this.domain,
+    upload: upload ?? this.upload,
+    download: download ?? this.download,
+  );
+  UsageStatRow copyWithCompanion(UsageStatsCompanion data) {
+    return UsageStatRow(
+      day: data.day.present ? data.day.value : this.day,
+      app: data.app.present ? data.app.value : this.app,
+      domain: data.domain.present ? data.domain.value : this.domain,
+      upload: data.upload.present ? data.upload.value : this.upload,
+      download: data.download.present ? data.download.value : this.download,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('UsageStatRow(')
+          ..write('day: $day, ')
+          ..write('app: $app, ')
+          ..write('domain: $domain, ')
+          ..write('upload: $upload, ')
+          ..write('download: $download')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(day, app, domain, upload, download);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is UsageStatRow &&
+          other.day == this.day &&
+          other.app == this.app &&
+          other.domain == this.domain &&
+          other.upload == this.upload &&
+          other.download == this.download);
+}
+
+class UsageStatsCompanion extends UpdateCompanion<UsageStatRow> {
+  final Value<String> day;
+  final Value<String> app;
+  final Value<String> domain;
+  final Value<int> upload;
+  final Value<int> download;
+  final Value<int> rowid;
+  const UsageStatsCompanion({
+    this.day = const Value.absent(),
+    this.app = const Value.absent(),
+    this.domain = const Value.absent(),
+    this.upload = const Value.absent(),
+    this.download = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  UsageStatsCompanion.insert({
+    required String day,
+    required String app,
+    required String domain,
+    required int upload,
+    required int download,
+    this.rowid = const Value.absent(),
+  }) : day = Value(day),
+       app = Value(app),
+       domain = Value(domain),
+       upload = Value(upload),
+       download = Value(download);
+  static Insertable<UsageStatRow> custom({
+    Expression<String>? day,
+    Expression<String>? app,
+    Expression<String>? domain,
+    Expression<int>? upload,
+    Expression<int>? download,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (day != null) 'day': day,
+      if (app != null) 'app': app,
+      if (domain != null) 'domain': domain,
+      if (upload != null) 'upload': upload,
+      if (download != null) 'download': download,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  UsageStatsCompanion copyWith({
+    Value<String>? day,
+    Value<String>? app,
+    Value<String>? domain,
+    Value<int>? upload,
+    Value<int>? download,
+    Value<int>? rowid,
+  }) {
+    return UsageStatsCompanion(
+      day: day ?? this.day,
+      app: app ?? this.app,
+      domain: domain ?? this.domain,
+      upload: upload ?? this.upload,
+      download: download ?? this.download,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (day.present) {
+      map['day'] = Variable<String>(day.value);
+    }
+    if (app.present) {
+      map['app'] = Variable<String>(app.value);
+    }
+    if (domain.present) {
+      map['domain'] = Variable<String>(domain.value);
+    }
+    if (upload.present) {
+      map['upload'] = Variable<int>(upload.value);
+    }
+    if (download.present) {
+      map['download'] = Variable<int>(download.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('UsageStatsCompanion(')
+          ..write('day: $day, ')
+          ..write('app: $app, ')
+          ..write('domain: $domain, ')
+          ..write('upload: $upload, ')
+          ..write('download: $download, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$Database extends GeneratedDatabase {
   _$Database(QueryExecutor e) : super(e);
   $DatabaseManager get managers => $DatabaseManager(this);
@@ -5256,6 +5609,7 @@ abstract class _$Database extends GeneratedDatabase {
   late final $ProxyDialersTable proxyDialers = $ProxyDialersTable(this);
   late final $IpQualitiesTable ipQualities = $IpQualitiesTable(this);
   late final $MitmModulesTable mitmModules = $MitmModulesTable(this);
+  late final $UsageStatsTable usageStats = $UsageStatsTable(this);
   late final Index idxRuleTarget = Index(
     'idx_rule_target',
     'CREATE INDEX idx_rule_target ON rules (rule_target)',
@@ -5289,6 +5643,7 @@ abstract class _$Database extends GeneratedDatabase {
   );
   late final IpQualitiesDao ipQualitiesDao = IpQualitiesDao(this as Database);
   late final MitmModulesDao mitmModulesDao = MitmModulesDao(this as Database);
+  late final UsageStatsDao usageStatsDao = UsageStatsDao(this as Database);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -5306,6 +5661,7 @@ abstract class _$Database extends GeneratedDatabase {
     proxyDialers,
     ipQualities,
     mitmModules,
+    usageStats,
     idxRuleTarget,
     idxRulesProfileOrder,
     idxProxyGroupsProfileOrder,
@@ -9412,6 +9768,215 @@ typedef $$MitmModulesTableProcessedTableManager =
       RawMitmModule,
       PrefetchHooks Function()
     >;
+typedef $$UsageStatsTableCreateCompanionBuilder =
+    UsageStatsCompanion Function({
+      required String day,
+      required String app,
+      required String domain,
+      required int upload,
+      required int download,
+      Value<int> rowid,
+    });
+typedef $$UsageStatsTableUpdateCompanionBuilder =
+    UsageStatsCompanion Function({
+      Value<String> day,
+      Value<String> app,
+      Value<String> domain,
+      Value<int> upload,
+      Value<int> download,
+      Value<int> rowid,
+    });
+
+class $$UsageStatsTableFilterComposer
+    extends Composer<_$Database, $UsageStatsTable> {
+  $$UsageStatsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get day => $composableBuilder(
+    column: $table.day,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get app => $composableBuilder(
+    column: $table.app,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get domain => $composableBuilder(
+    column: $table.domain,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get upload => $composableBuilder(
+    column: $table.upload,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get download => $composableBuilder(
+    column: $table.download,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$UsageStatsTableOrderingComposer
+    extends Composer<_$Database, $UsageStatsTable> {
+  $$UsageStatsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get day => $composableBuilder(
+    column: $table.day,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get app => $composableBuilder(
+    column: $table.app,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get domain => $composableBuilder(
+    column: $table.domain,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get upload => $composableBuilder(
+    column: $table.upload,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get download => $composableBuilder(
+    column: $table.download,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$UsageStatsTableAnnotationComposer
+    extends Composer<_$Database, $UsageStatsTable> {
+  $$UsageStatsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get day =>
+      $composableBuilder(column: $table.day, builder: (column) => column);
+
+  GeneratedColumn<String> get app =>
+      $composableBuilder(column: $table.app, builder: (column) => column);
+
+  GeneratedColumn<String> get domain =>
+      $composableBuilder(column: $table.domain, builder: (column) => column);
+
+  GeneratedColumn<int> get upload =>
+      $composableBuilder(column: $table.upload, builder: (column) => column);
+
+  GeneratedColumn<int> get download =>
+      $composableBuilder(column: $table.download, builder: (column) => column);
+}
+
+class $$UsageStatsTableTableManager
+    extends
+        RootTableManager<
+          _$Database,
+          $UsageStatsTable,
+          UsageStatRow,
+          $$UsageStatsTableFilterComposer,
+          $$UsageStatsTableOrderingComposer,
+          $$UsageStatsTableAnnotationComposer,
+          $$UsageStatsTableCreateCompanionBuilder,
+          $$UsageStatsTableUpdateCompanionBuilder,
+          (
+            UsageStatRow,
+            BaseReferences<_$Database, $UsageStatsTable, UsageStatRow>,
+          ),
+          UsageStatRow,
+          PrefetchHooks Function()
+        > {
+  $$UsageStatsTableTableManager(_$Database db, $UsageStatsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$UsageStatsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$UsageStatsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$UsageStatsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> day = const Value.absent(),
+                Value<String> app = const Value.absent(),
+                Value<String> domain = const Value.absent(),
+                Value<int> upload = const Value.absent(),
+                Value<int> download = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => UsageStatsCompanion(
+                day: day,
+                app: app,
+                domain: domain,
+                upload: upload,
+                download: download,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String day,
+                required String app,
+                required String domain,
+                required int upload,
+                required int download,
+                Value<int> rowid = const Value.absent(),
+              }) => UsageStatsCompanion.insert(
+                day: day,
+                app: app,
+                domain: domain,
+                upload: upload,
+                download: download,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$UsageStatsTable, UsageStatRow>(table),
+                  BaseReferences<_$Database, $UsageStatsTable, UsageStatRow>(
+                    db,
+                    table,
+                    e,
+                  ),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$UsageStatsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$Database,
+      $UsageStatsTable,
+      UsageStatRow,
+      $$UsageStatsTableFilterComposer,
+      $$UsageStatsTableOrderingComposer,
+      $$UsageStatsTableAnnotationComposer,
+      $$UsageStatsTableCreateCompanionBuilder,
+      $$UsageStatsTableUpdateCompanionBuilder,
+      (
+        UsageStatRow,
+        BaseReferences<_$Database, $UsageStatsTable, UsageStatRow>,
+      ),
+      UsageStatRow,
+      PrefetchHooks Function()
+    >;
 
 class $DatabaseManager {
   final _$Database _db;
@@ -9440,6 +10005,8 @@ class $DatabaseManager {
       $$IpQualitiesTableTableManager(_db, _db.ipQualities);
   $$MitmModulesTableTableManager get mitmModules =>
       $$MitmModulesTableTableManager(_db, _db.mitmModules);
+  $$UsageStatsTableTableManager get usageStats =>
+      $$UsageStatsTableTableManager(_db, _db.usageStats);
 }
 
 mixin _$ProfilesDaoMixin on DatabaseAccessor<Database> {
@@ -9590,4 +10157,16 @@ class MitmModulesDaoManager {
   MitmModulesDaoManager(this._db);
   $$MitmModulesTableTableManager get mitmModules =>
       $$MitmModulesTableTableManager(_db.attachedDatabase, _db.mitmModules);
+}
+
+mixin _$UsageStatsDaoMixin on DatabaseAccessor<Database> {
+  $UsageStatsTable get usageStats => attachedDatabase.usageStats;
+  UsageStatsDaoManager get managers => UsageStatsDaoManager(this);
+}
+
+class UsageStatsDaoManager {
+  final _$UsageStatsDaoMixin _db;
+  UsageStatsDaoManager(this._db);
+  $$UsageStatsTableTableManager get usageStats =>
+      $$UsageStatsTableTableManager(_db.attachedDatabase, _db.usageStats);
 }
