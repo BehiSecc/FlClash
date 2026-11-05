@@ -19,7 +19,7 @@ void main() {
   late List<String> prunes;
   late int clears;
   late int changes;
-  late Object? failure;
+  late Exception? failure;
   late UsageRecorder recorder;
 
   UsageRecorder build({Duration interval = const Duration(hours: 1)}) {
@@ -67,7 +67,7 @@ void main() {
   test('keeps the deltas of a failed flush for the next one', () async {
     recorder.onRequest(_request('a'));
     recorder.onTraffic({'a': (upload: 4, download: 9)});
-    failure = StateError('disk full');
+    failure = Exception('disk full');
 
     await recorder.flush();
 
