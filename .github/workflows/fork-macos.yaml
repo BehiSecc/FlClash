@@ -112,4 +112,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           TAG: ${{ github.ref_name }}
-        run: gh release create "$TAG" dist/*.dmg --prerelease --title "$TAG" --notes "MyClash: FlClash with per-app and per-domain usage statistics. Installs alongside official FlClash."
+        run: |
+          gh release create "$TAG" dist/*.dmg --prerelease --title "$TAG" \
+            --notes "MyClash is FlClash with per-app and per-domain usage statistics. It installs alongside official FlClash."
