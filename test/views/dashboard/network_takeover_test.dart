@@ -1,4 +1,5 @@
 import 'package:fl_clash/common/common.dart';
+import 'package:fl_clash/models/clash_config.dart';
 import 'package:fl_clash/providers/app.dart';
 import 'package:fl_clash/providers/config.dart';
 import 'package:fl_clash/providers/database.dart';
@@ -156,7 +157,7 @@ void main() {
   testWidgets('a row says what it is set to', (tester) async {
     await pumpCard(tester, const NetworkTakeoverCard());
 
-    expect(find.text('Port 7890'), findsOneWidget);
+    expect(find.text('Port $defaultMixedPort'), findsOneWidget);
     expect(find.text(currentAppLocalizations.disabled), findsOneWidget);
 
     await tester.tap(switchOf(_rowCases[1]));

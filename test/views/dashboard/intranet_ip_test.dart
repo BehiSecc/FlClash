@@ -1,3 +1,4 @@
+import 'package:fl_clash/models/clash_config.dart';
 import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/state.dart';
 import 'package:fl_clash/views/dashboard/layout.dart';
@@ -66,7 +67,7 @@ void main() {
     await tester.pump();
 
     expect(container.read(patchClashConfigProvider).allowLan, isTrue);
-    expect(find.text('Port 7890'), findsOneWidget);
+    expect(find.text('Port $defaultMixedPort'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -96,7 +97,7 @@ void main() {
     await tester.pump();
     await tester.tap(find.byTooltip('Copy'));
     await tester.pump();
-    expect(copied, '192.168.1.23:7890');
+    expect(copied, '192.168.1.23:$defaultMixedPort');
     await tester.pumpAndSettle();
   });
 
