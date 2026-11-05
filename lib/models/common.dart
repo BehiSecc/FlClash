@@ -90,6 +90,7 @@ abstract class Metadata with _$Metadata {
   const factory Metadata({
     @Default(0) int uid,
     @Default('') String network,
+    @Default('') String type,
     @Default('') String sourceIP,
     @Default('') String sourcePort,
     @Default('') String destinationIP,

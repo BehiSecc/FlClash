@@ -25,6 +25,7 @@ Map<String, dynamic> _$PackageToJson(_Package instance) => <String, dynamic>{
 _Metadata _$MetadataFromJson(Map<String, dynamic> json) => _Metadata(
   uid: (json['uid'] as num?)?.toInt() ?? 0,
   network: json['network'] as String? ?? '',
+  type: json['type'] as String? ?? '',
   sourceIP: json['sourceIP'] as String? ?? '',
   sourcePort: json['sourcePort'] as String? ?? '',
   destinationIP: json['destinationIP'] as String? ?? '',
@@ -55,6 +56,7 @@ _Metadata _$MetadataFromJson(Map<String, dynamic> json) => _Metadata(
 Map<String, dynamic> _$MetadataToJson(_Metadata instance) => <String, dynamic>{
   'uid': instance.uid,
   'network': instance.network,
+  'type': instance.type,
   'sourceIP': instance.sourceIP,
   'sourcePort': instance.sourcePort,
   'destinationIP': instance.destinationIP,
