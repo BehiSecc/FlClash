@@ -533,6 +533,19 @@ enum PageLabel {
   dns,
 }
 
+enum UsageRange {
+  today(1),
+  week(7),
+  month(30),
+  all(null);
+
+  const UsageRange(this.days);
+
+  final int? days;
+}
+
+enum UsageTab { apps, domains }
+
 enum RuleAction {
   DOMAIN('DOMAIN'),
   DOMAIN_SUFFIX('DOMAIN-SUFFIX'),

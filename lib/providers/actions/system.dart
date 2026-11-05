@@ -57,6 +57,7 @@ class SystemAction extends _$SystemAction {
     await Future.wait([
       ?saveOperation,
       bootGuard.markClosed(),
+      ref.read(usageRecorderProvider).flush(),
       if (systemDnsCoordinator != null) systemDnsCoordinator!.shutdown(),
       ?systemProxyQueue?.close(),
     ]);

@@ -11,6 +11,7 @@ import 'package:fl_clash/providers/core.dart';
 import 'package:fl_clash/providers/database.dart';
 import 'package:fl_clash/providers/route_state.dart';
 import 'package:fl_clash/providers/state.dart';
+import 'package:fl_clash/providers/usage.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:prism_ui/banner.dart';
@@ -154,6 +155,7 @@ class _CoreContainerState extends ConsumerState<CoreManager>
 
   @override
   void onRequest(TrackerInfo trackerInfo) async {
+    ref.read(usageRecorderProvider).onRequest(trackerInfo);
     ref.read(requestsProvider.notifier).addRequest(trackerInfo);
     ref.read(requestCountProvider.notifier).update((count) => count + 1);
     super.onRequest(trackerInfo);
@@ -161,6 +163,7 @@ class _CoreContainerState extends ConsumerState<CoreManager>
 
   @override
   void onRequestTraffic(Map<String, RequestTraffic> traffic) {
+    ref.read(usageRecorderProvider).onTraffic(traffic);
     ref.read(requestsProvider.notifier).updateTraffic(traffic);
     super.onRequestTraffic(traffic);
   }
