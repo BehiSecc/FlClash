@@ -10,6 +10,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 const usageRowExtent = 76.0;
 
+const _usageTotalWidth = 88.0;
+
 String usageNameOf(BuildContext context, String name) {
   return name.isEmpty ? context.appLocalizations.unknown : name;
 }
@@ -77,9 +79,14 @@ class UsageRow extends StatelessWidget {
           LinearProgressIndicator(value: share),
         ],
       ),
-      trailing: Text(
-        item.total.traffic.show,
-        style: AppTextStyle.callout.of(context, emphasized: true),
+      trailing: SizedBox(
+        width: _usageTotalWidth,
+        child: Text(
+          item.total.traffic.show,
+          maxLines: 1,
+          textAlign: TextAlign.end,
+          style: AppTextStyle.callout.of(context, emphasized: true),
+        ),
       ),
     );
   }
@@ -216,12 +223,14 @@ class UsageFindProcessNotice extends ConsumerWidget {
 class UsageList extends StatefulWidget {
   final List<UsageTotal> items;
   final Object scope;
+  final double topPadding;
   final ValueChanged<UsageTotal>? onSelected;
 
   const UsageList({
     super.key,
     required this.items,
     required this.scope,
+    this.topPadding = 0,
     this.onSelected,
   });
 
@@ -252,7 +261,10 @@ class _UsageListState extends State<UsageList>
       controller: _controller,
       child: PrismListView(
         controller: _controller,
-        padding: EdgeInsets.only(bottom: 16 + context.bottomInset),
+        padding: EdgeInsets.only(
+          top: widget.topPadding,
+          bottom: 16 + context.bottomInset,
+        ),
         scrollCacheExtent: arrivalCacheExtent,
         itemCount: items.length,
         estimatedItemExtent: usageRowExtent,
@@ -313,7 +325,11 @@ class _UsageBreakdown extends ConsumerWidget {
         label: context.appLocalizations.noData,
         illustration: NullStatusIllustration.data,
       ),
-      child: UsageList(items: items ?? const [], scope: (range, tab, name)),
+      child: UsageList(
+        items: items ?? const [],
+        scope: (range, tab, name),
+        topPadding: context.contentTopPadding,
+      ),
     );
   }
 }
